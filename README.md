@@ -13,4 +13,4 @@ To run the emulator or disassembler pass the target binaries as program argument
 
 The disassembler outputs its results to stdout. To save it as a text file redirect the output.
 
-e.g. on linux `./disassembler >> assembly.txt `
+> e.g. on Linux `./disassembler <binary_file_to_disassemble> >> assembly.txt `
