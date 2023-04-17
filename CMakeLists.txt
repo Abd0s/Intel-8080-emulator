@@ -5,11 +5,17 @@ set(CMAKE_CXX_STANDARD 17)
 
 # Create a sources variable with a link to all cpp files to compile
 set(SOURCES
-        src/emulator/instruction_implementations.cpp
         src/main.cpp
+        src/emulator/emulator.cpp
+        src/emulator/instruction_implementations.cpp
         src/gui_modules/cpu_controls.cpp
         src/gui_modules/instruction_execution_trace.cpp
-        src/emulator/emulator.cpp src/gui_modules/emulator_controls.cpp include/gui_modules/emulator_controls.h)
+        src/gui_modules/emulator_controls.cpp
+        src/gui_modules/debug/debug.cpp
+
+    # External
+        external/ImGuiFileDialog/ImGuiFileDialog.cpp
+        )
 
 
 add_executable(${PROJECT_NAME} ${SOURCES})
@@ -18,6 +24,7 @@ add_executable(${PROJECT_NAME}-diss disassembler.cpp)
 target_include_directories(${PROJECT_NAME}
         PRIVATE
         ${PROJECT_SOURCE_DIR}/include
+        ${PROJECT_SOURCE_DIR}/external
         )
 
 # External libraries

@@ -59,13 +59,17 @@ struct MemoryEditor
     int             PreviewEndianess;
     ImGuiDataType   PreviewDataType;
 
-    MemoryEditor()
+    std::string title;
+    ImVec2 window_pos;
+    ImVec2 window_size;
+
+    MemoryEditor(const std::string &title, ImVec2 window_size, ImVec2 window_pos = ImVec2(0, 0)) : title(title), window_pos(window_pos), window_size(window_size)
     {
         // Settings
         Open = true;
         ReadOnly = false;
         Cols = 8;
-        OptShowOptions = false;
+        OptShowOptions = true;
         OptShowDataPreview = false;
         OptShowHexII = false;
         OptShowAscii = true;
@@ -73,7 +77,7 @@ struct MemoryEditor
         OptUpperCaseHex = true;
         OptMidColsCount = 8;
         OptAddrDigitsCount = 0;
-        OptFooterExtraHeight = 0.0f;
+        OptFooterExtraHeight = 2.0f;
         HighlightColor = IM_COL32(255, 255, 255, 50);
         ReadFn = NULL;
         WriteFn = NULL;
@@ -139,18 +143,16 @@ struct MemoryEditor
     }
 
     // Standalone Memory Editor window
-    void DrawWindow(const char* title, void* mem_data, size_t mem_size, ImVec2 window_pos = ImVec2(0, 0) , ImGuiWindowFlags window_flags = 0, size_t base_display_addr = 0x0000)
+    void DrawWindow(void* mem_data, size_t mem_size , ImGuiWindowFlags window_flags = 0, size_t base_display_addr = 0x0000)
     {
         Sizes s;
         CalcSizes(s, mem_size, base_display_addr);
-        ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(0.0f, 0.0f));
-        const ImGuiViewport* main_viewport = ImGui::GetMainViewport();
-        ImGui::SetNextWindowPos(window_pos, ImGuiCond_FirstUseEver);
-        ImGui::SetNextWindowSize(ImVec2(s.WindowWidth, main_viewport->Size.y), ImGuiCond_FirstUseEver);
+        ImGui::SetNextWindowPos(window_pos);
+        ImGui::SetNextWindowSize(ImVec2(s.WindowWidth, window_size.y));
         ImGui::SetNextWindowSizeConstraints(ImVec2(0.0f, 0.0f), ImVec2(s.WindowWidth, FLT_MAX));
 
         Open = true;
-        if (ImGui::Begin(title, NULL, window_flags | ImGuiWindowFlags_NoScrollbar))
+        if (ImGui::Begin(title.c_str(), NULL, window_flags | ImGuiWindowFlags_NoScrollbar))
         {
             if (ImGui::IsWindowHovered(ImGuiHoveredFlags_RootAndChildWindows) && ImGui::IsMouseReleased(ImGuiMouseButton_Right))
                 ImGui::OpenPopup("context");
@@ -161,7 +163,6 @@ struct MemoryEditor
                 ImGui::SetWindowSize(ImVec2(s.WindowWidth, ImGui::GetWindowSize().y));
             }
         }
-        ImGui::PopStyleVar();
         ImGui::End();
     }
 
@@ -423,7 +424,6 @@ struct MemoryEditor
         if (ImGui::BeginPopup("context"))
         {
             ImGui::SetNextItemWidth(s.GlyphWidth * 7 + style.FramePadding.x * 2.0f);
-            if (ImGui::DragInt("##cols", &Cols, 0.2f, 4, 32, "%d cols")) { ContentsWidthChanged = true; if (Cols < 1) Cols = 1; }
             ImGui::Checkbox("Show Data Preview", &OptShowDataPreview);
             ImGui::Checkbox("Show HexII", &OptShowHexII);
             if (ImGui::Checkbox("Show Ascii", &OptShowAscii)) { ContentsWidthChanged = true; }

@@ -163,6 +163,33 @@ disassembler.cpp.s:
 	$(MAKE) -f CMakeFiles/8080sim-diss.dir/build.make CMakeFiles/8080sim-diss.dir/disassembler.cpp.s
 .PHONY : disassembler.cpp.s
 
+external/ImGuiFileDialog/ImGuiFileDialog.o: external/ImGuiFileDialog/ImGuiFileDialog.cpp.o
+
+.PHONY : external/ImGuiFileDialog/ImGuiFileDialog.o
+
+# target to build an object file
+external/ImGuiFileDialog/ImGuiFileDialog.cpp.o:
+	$(MAKE) -f CMakeFiles/8080sim.dir/build.make CMakeFiles/8080sim.dir/external/ImGuiFileDialog/ImGuiFileDialog.cpp.o
+.PHONY : external/ImGuiFileDialog/ImGuiFileDialog.cpp.o
+
+external/ImGuiFileDialog/ImGuiFileDialog.i: external/ImGuiFileDialog/ImGuiFileDialog.cpp.i
+
+.PHONY : external/ImGuiFileDialog/ImGuiFileDialog.i
+
+# target to preprocess a source file
+external/ImGuiFileDialog/ImGuiFileDialog.cpp.i:
+	$(MAKE) -f CMakeFiles/8080sim.dir/build.make CMakeFiles/8080sim.dir/external/ImGuiFileDialog/ImGuiFileDialog.cpp.i
+.PHONY : external/ImGuiFileDialog/ImGuiFileDialog.cpp.i
+
+external/ImGuiFileDialog/ImGuiFileDialog.s: external/ImGuiFileDialog/ImGuiFileDialog.cpp.s
+
+.PHONY : external/ImGuiFileDialog/ImGuiFileDialog.s
+
+# target to generate assembly for a file
+external/ImGuiFileDialog/ImGuiFileDialog.cpp.s:
+	$(MAKE) -f CMakeFiles/8080sim.dir/build.make CMakeFiles/8080sim.dir/external/ImGuiFileDialog/ImGuiFileDialog.cpp.s
+.PHONY : external/ImGuiFileDialog/ImGuiFileDialog.cpp.s
+
 src/emulator/emulator.o: src/emulator/emulator.cpp.o
 
 .PHONY : src/emulator/emulator.o
@@ -243,6 +270,33 @@ src/gui_modules/cpu_controls.s: src/gui_modules/cpu_controls.cpp.s
 src/gui_modules/cpu_controls.cpp.s:
 	$(MAKE) -f CMakeFiles/8080sim.dir/build.make CMakeFiles/8080sim.dir/src/gui_modules/cpu_controls.cpp.s
 .PHONY : src/gui_modules/cpu_controls.cpp.s
+
+src/gui_modules/debug/debug.o: src/gui_modules/debug/debug.cpp.o
+
+.PHONY : src/gui_modules/debug/debug.o
+
+# target to build an object file
+src/gui_modules/debug/debug.cpp.o:
+	$(MAKE) -f CMakeFiles/8080sim.dir/build.make CMakeFiles/8080sim.dir/src/gui_modules/debug/debug.cpp.o
+.PHONY : src/gui_modules/debug/debug.cpp.o
+
+src/gui_modules/debug/debug.i: src/gui_modules/debug/debug.cpp.i
+
+.PHONY : src/gui_modules/debug/debug.i
+
+# target to preprocess a source file
+src/gui_modules/debug/debug.cpp.i:
+	$(MAKE) -f CMakeFiles/8080sim.dir/build.make CMakeFiles/8080sim.dir/src/gui_modules/debug/debug.cpp.i
+.PHONY : src/gui_modules/debug/debug.cpp.i
+
+src/gui_modules/debug/debug.s: src/gui_modules/debug/debug.cpp.s
+
+.PHONY : src/gui_modules/debug/debug.s
+
+# target to generate assembly for a file
+src/gui_modules/debug/debug.cpp.s:
+	$(MAKE) -f CMakeFiles/8080sim.dir/build.make CMakeFiles/8080sim.dir/src/gui_modules/debug/debug.cpp.s
+.PHONY : src/gui_modules/debug/debug.cpp.s
 
 src/gui_modules/emulator_controls.o: src/gui_modules/emulator_controls.cpp.o
 
@@ -338,6 +392,9 @@ help:
 	@echo "... disassembler.o"
 	@echo "... disassembler.i"
 	@echo "... disassembler.s"
+	@echo "... external/ImGuiFileDialog/ImGuiFileDialog.o"
+	@echo "... external/ImGuiFileDialog/ImGuiFileDialog.i"
+	@echo "... external/ImGuiFileDialog/ImGuiFileDialog.s"
 	@echo "... src/emulator/emulator.o"
 	@echo "... src/emulator/emulator.i"
 	@echo "... src/emulator/emulator.s"
@@ -347,6 +404,9 @@ help:
 	@echo "... src/gui_modules/cpu_controls.o"
 	@echo "... src/gui_modules/cpu_controls.i"
 	@echo "... src/gui_modules/cpu_controls.s"
+	@echo "... src/gui_modules/debug/debug.o"
+	@echo "... src/gui_modules/debug/debug.i"
+	@echo "... src/gui_modules/debug/debug.s"
 	@echo "... src/gui_modules/emulator_controls.o"
 	@echo "... src/gui_modules/emulator_controls.i"
 	@echo "... src/gui_modules/emulator_controls.s"

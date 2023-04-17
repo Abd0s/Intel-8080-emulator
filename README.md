@@ -5,12 +5,22 @@ Emulator + disassembler for the Intel 8080 ISA written in C++
 
 Build using CMake and `CMakeList.txt` to your desired target.
 
+The following dependencies need to be installed:
+
++ SFML
++ SFML-Imgui
++ Imgui
++ fmt
+
+Use your platform specific package manager such as `apt` or compile/install from the respective 
+project sources.
+
 # Run
 
-To run the emulator or disassembler pass the target binaries as program argument:
+Compile the project or download one of the precompiled releases (only linux). Windows
+users can run the linux binaries through WSL.
 
-`./compiled-executable <binary_file_to_emulate/disassemble>`
+Load a binary file to run into the emulator and click the run button in the emulator control
+section.
 
-The disassembler outputs its results to stdout. To save it as a text file redirect the output.
 
-> e.g. on Linux `./disassembler <binary_file_to_disassemble> >> assembly.txt `

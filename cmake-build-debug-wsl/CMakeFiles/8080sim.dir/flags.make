@@ -6,5 +6,5 @@ CXX_FLAGS = -g   -std=gnu++17
 
 CXX_DEFINES = -DFMT_LOCALE -DIMGUI_USER_CONFIG=\"imconfig-SFML.h\"
 
-CXX_INCLUDES = -I/mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/include 
+CXX_INCLUDES = -I/mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/include -I/mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/external 
 

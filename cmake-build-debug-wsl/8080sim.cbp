@@ -91,6 +91,7 @@
 					<Add option="-DFMT_LOCALE"/>
 					<Add option="-DIMGUI_USER_CONFIG=&quot;imconfig-SFML.h&quot;"/>
 					<Add directory="/mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/include"/>
+					<Add directory="/mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/external"/>
 					<Add directory="/usr/include/c++/9"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
 					<Add directory="/usr/include/c++/9/backward"/>
@@ -116,6 +117,7 @@
 					<Add option="-DFMT_LOCALE"/>
 					<Add option="-DIMGUI_USER_CONFIG=&quot;imconfig-SFML.h&quot;"/>
 					<Add directory="/mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/include"/>
+					<Add directory="/mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/external"/>
 					<Add directory="/usr/include/c++/9"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
 					<Add directory="/usr/include/c++/9/backward"/>
@@ -135,7 +137,10 @@
 		<Unit filename="/mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/disassembler.cpp">
 			<Option target="8080sim-diss"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/include/gui_modules/emulator_controls.h">
+		<Unit filename="/mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/external/ImGuiFileDialog/ImGuiFileDialog.cpp">
+			<Option target="8080sim"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/external/ImGuiFileDialog/ImGuiFileDialog.h">
 			<Option target="8080sim"/>
 		</Unit>
 		<Unit filename="/mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/src/emulator/emulator.cpp">
@@ -145,6 +150,9 @@
 			<Option target="8080sim"/>
 		</Unit>
 		<Unit filename="/mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/src/gui_modules/cpu_controls.cpp">
+			<Option target="8080sim"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/src/gui_modules/debug/debug.cpp">
 			<Option target="8080sim"/>
 		</Unit>
 		<Unit filename="/mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/src/gui_modules/emulator_controls.cpp">

@@ -4,9 +4,11 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/external/ImGuiFileDialog/ImGuiFileDialog.cpp" "/mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/cmake-build-debug-wsl/CMakeFiles/8080sim.dir/external/ImGuiFileDialog/ImGuiFileDialog.cpp.o"
   "/mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/src/emulator/emulator.cpp" "/mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/cmake-build-debug-wsl/CMakeFiles/8080sim.dir/src/emulator/emulator.cpp.o"
   "/mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/src/emulator/instruction_implementations.cpp" "/mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/cmake-build-debug-wsl/CMakeFiles/8080sim.dir/src/emulator/instruction_implementations.cpp.o"
   "/mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/src/gui_modules/cpu_controls.cpp" "/mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/cmake-build-debug-wsl/CMakeFiles/8080sim.dir/src/gui_modules/cpu_controls.cpp.o"
+  "/mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/src/gui_modules/debug/debug.cpp" "/mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/cmake-build-debug-wsl/CMakeFiles/8080sim.dir/src/gui_modules/debug/debug.cpp.o"
   "/mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/src/gui_modules/emulator_controls.cpp" "/mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/cmake-build-debug-wsl/CMakeFiles/8080sim.dir/src/gui_modules/emulator_controls.cpp.o"
   "/mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/src/gui_modules/instruction_execution_trace.cpp" "/mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/cmake-build-debug-wsl/CMakeFiles/8080sim.dir/src/gui_modules/instruction_execution_trace.cpp.o"
   "/mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/src/main.cpp" "/mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/cmake-build-debug-wsl/CMakeFiles/8080sim.dir/src/main.cpp.o"
@@ -22,6 +24,7 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../include"
+  "../external"
   )
 
 # Targets to which this target links.

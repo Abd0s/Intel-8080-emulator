@@ -1,8 +1,0 @@
-//
-// Created by Abdos on 14/04/2023.
-//
-
-#ifndef INC_8080SIM_CPU_CONTROLS_H
-#define INC_8080SIM_CPU_CONTROLS_H
-
-#endif //INC_8080SIM_CPU_CONTROLS_H

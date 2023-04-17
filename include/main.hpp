@@ -1,0 +1,11 @@
+//
+// Created by Abdos on 12/09/2022.
+//
+
+#ifndef INC_8080SIM_MAIN_HPP
+#define INC_8080SIM_MAIN_HPP
+
+#define SIM8080_VERSION "0.0.1"
+#define SIM8080_VERSION_NUM 00010
+
+#endif //INC_8080SIM_MAIN_HPP

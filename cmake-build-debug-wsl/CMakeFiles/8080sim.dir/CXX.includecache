@@ -6,11 +6,37 @@
 
 #IncludeRegexTransform: 
 
-/mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/include/emulator/emulator.h
+../include/emulator/emulator.hpp
 cstdint
 -
 array
 -
+
+../include/gui_modules/cpu_controls.hpp
+string
+-
+imgui.h
+../include/gui_modules/imgui.h
+
+../include/gui_modules/debug.hpp
+string
+-
+imgui.h
+../include/gui_modules/imgui.h
+
+../include/gui_modules/emulator_controls.hpp
+string
+-
+imgui.h
+../include/gui_modules/imgui.h
+
+../include/gui_modules/instruction_execution_trace.hpp
+string
+-
+imgui.h
+../include/gui_modules/imgui.h
+
+../include/main.h
 
 /mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/include/gui_modules/memory_editor.h
 stdio.h
@@ -18,13 +44,19 @@ stdio.h
 stdint.h
 -
 
-/mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/include/main.h
-
 /mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/src/main.cpp
-../include/main.h
-/mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/include/main.h
-../include/emulator/emulator.h
-/mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/include/emulator/emulator.h
+main.h
+/mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/src/main.h
+emulator/emulator.hpp
+/mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/src/emulator/emulator.hpp
+gui_modules/instruction_execution_trace.hpp
+/mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/src/gui_modules/instruction_execution_trace.hpp
+gui_modules/emulator_controls.hpp
+/mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/src/gui_modules/emulator_controls.hpp
+gui_modules/cpu_controls.hpp
+/mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/src/gui_modules/cpu_controls.hpp
+gui_modules/debug.hpp
+/mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/src/gui_modules/debug.hpp
 fmt/core.h
 /mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/src/fmt/core.h
 fmt/color.h
@@ -33,9 +65,7 @@ imgui.h
 /mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/src/imgui.h
 imgui-SFML.h
 /mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/src/imgui-SFML.h
-SFML/Graphics/CircleShape.hpp
--
-SFML/Graphics/RenderWindow.hpp
+SFML/Graphics.hpp
 -
 SFML/System/Clock.hpp
 -

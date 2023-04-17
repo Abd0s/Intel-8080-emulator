@@ -57,22 +57,9 @@ include CMakeFiles/8080sim.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/8080sim.dir/flags.make
 
-CMakeFiles/8080sim.dir/src/emulator/instruction_implementations.cpp.o: CMakeFiles/8080sim.dir/flags.make
-CMakeFiles/8080sim.dir/src/emulator/instruction_implementations.cpp.o: ../src/emulator/instruction_implementations.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/cmake-build-debug-wsl/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/8080sim.dir/src/emulator/instruction_implementations.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/8080sim.dir/src/emulator/instruction_implementations.cpp.o -c /mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/src/emulator/instruction_implementations.cpp
-
-CMakeFiles/8080sim.dir/src/emulator/instruction_implementations.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/8080sim.dir/src/emulator/instruction_implementations.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/src/emulator/instruction_implementations.cpp > CMakeFiles/8080sim.dir/src/emulator/instruction_implementations.cpp.i
-
-CMakeFiles/8080sim.dir/src/emulator/instruction_implementations.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/8080sim.dir/src/emulator/instruction_implementations.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/src/emulator/instruction_implementations.cpp -o CMakeFiles/8080sim.dir/src/emulator/instruction_implementations.cpp.s
-
 CMakeFiles/8080sim.dir/src/main.cpp.o: CMakeFiles/8080sim.dir/flags.make
 CMakeFiles/8080sim.dir/src/main.cpp.o: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/cmake-build-debug-wsl/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/8080sim.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/cmake-build-debug-wsl/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/8080sim.dir/src/main.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/8080sim.dir/src/main.cpp.o -c /mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/src/main.cpp
 
 CMakeFiles/8080sim.dir/src/main.cpp.i: cmake_force
@@ -83,9 +70,35 @@ CMakeFiles/8080sim.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/8080sim.dir/src/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/src/main.cpp -o CMakeFiles/8080sim.dir/src/main.cpp.s
 
+CMakeFiles/8080sim.dir/src/emulator/emulator.cpp.o: CMakeFiles/8080sim.dir/flags.make
+CMakeFiles/8080sim.dir/src/emulator/emulator.cpp.o: ../src/emulator/emulator.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/cmake-build-debug-wsl/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/8080sim.dir/src/emulator/emulator.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/8080sim.dir/src/emulator/emulator.cpp.o -c /mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/src/emulator/emulator.cpp
+
+CMakeFiles/8080sim.dir/src/emulator/emulator.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/8080sim.dir/src/emulator/emulator.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/src/emulator/emulator.cpp > CMakeFiles/8080sim.dir/src/emulator/emulator.cpp.i
+
+CMakeFiles/8080sim.dir/src/emulator/emulator.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/8080sim.dir/src/emulator/emulator.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/src/emulator/emulator.cpp -o CMakeFiles/8080sim.dir/src/emulator/emulator.cpp.s
+
+CMakeFiles/8080sim.dir/src/emulator/instruction_implementations.cpp.o: CMakeFiles/8080sim.dir/flags.make
+CMakeFiles/8080sim.dir/src/emulator/instruction_implementations.cpp.o: ../src/emulator/instruction_implementations.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/cmake-build-debug-wsl/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/8080sim.dir/src/emulator/instruction_implementations.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/8080sim.dir/src/emulator/instruction_implementations.cpp.o -c /mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/src/emulator/instruction_implementations.cpp
+
+CMakeFiles/8080sim.dir/src/emulator/instruction_implementations.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/8080sim.dir/src/emulator/instruction_implementations.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/src/emulator/instruction_implementations.cpp > CMakeFiles/8080sim.dir/src/emulator/instruction_implementations.cpp.i
+
+CMakeFiles/8080sim.dir/src/emulator/instruction_implementations.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/8080sim.dir/src/emulator/instruction_implementations.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/src/emulator/instruction_implementations.cpp -o CMakeFiles/8080sim.dir/src/emulator/instruction_implementations.cpp.s
+
 CMakeFiles/8080sim.dir/src/gui_modules/cpu_controls.cpp.o: CMakeFiles/8080sim.dir/flags.make
 CMakeFiles/8080sim.dir/src/gui_modules/cpu_controls.cpp.o: ../src/gui_modules/cpu_controls.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/cmake-build-debug-wsl/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/8080sim.dir/src/gui_modules/cpu_controls.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/cmake-build-debug-wsl/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/8080sim.dir/src/gui_modules/cpu_controls.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/8080sim.dir/src/gui_modules/cpu_controls.cpp.o -c /mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/src/gui_modules/cpu_controls.cpp
 
 CMakeFiles/8080sim.dir/src/gui_modules/cpu_controls.cpp.i: cmake_force
@@ -98,7 +111,7 @@ CMakeFiles/8080sim.dir/src/gui_modules/cpu_controls.cpp.s: cmake_force
 
 CMakeFiles/8080sim.dir/src/gui_modules/instruction_execution_trace.cpp.o: CMakeFiles/8080sim.dir/flags.make
 CMakeFiles/8080sim.dir/src/gui_modules/instruction_execution_trace.cpp.o: ../src/gui_modules/instruction_execution_trace.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/cmake-build-debug-wsl/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/8080sim.dir/src/gui_modules/instruction_execution_trace.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/cmake-build-debug-wsl/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/8080sim.dir/src/gui_modules/instruction_execution_trace.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/8080sim.dir/src/gui_modules/instruction_execution_trace.cpp.o -c /mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/src/gui_modules/instruction_execution_trace.cpp
 
 CMakeFiles/8080sim.dir/src/gui_modules/instruction_execution_trace.cpp.i: cmake_force
@@ -108,19 +121,6 @@ CMakeFiles/8080sim.dir/src/gui_modules/instruction_execution_trace.cpp.i: cmake_
 CMakeFiles/8080sim.dir/src/gui_modules/instruction_execution_trace.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/8080sim.dir/src/gui_modules/instruction_execution_trace.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/src/gui_modules/instruction_execution_trace.cpp -o CMakeFiles/8080sim.dir/src/gui_modules/instruction_execution_trace.cpp.s
-
-CMakeFiles/8080sim.dir/src/emulator/emulator.cpp.o: CMakeFiles/8080sim.dir/flags.make
-CMakeFiles/8080sim.dir/src/emulator/emulator.cpp.o: ../src/emulator/emulator.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/cmake-build-debug-wsl/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/8080sim.dir/src/emulator/emulator.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/8080sim.dir/src/emulator/emulator.cpp.o -c /mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/src/emulator/emulator.cpp
-
-CMakeFiles/8080sim.dir/src/emulator/emulator.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/8080sim.dir/src/emulator/emulator.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/src/emulator/emulator.cpp > CMakeFiles/8080sim.dir/src/emulator/emulator.cpp.i
-
-CMakeFiles/8080sim.dir/src/emulator/emulator.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/8080sim.dir/src/emulator/emulator.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/src/emulator/emulator.cpp -o CMakeFiles/8080sim.dir/src/emulator/emulator.cpp.s
 
 CMakeFiles/8080sim.dir/src/gui_modules/emulator_controls.cpp.o: CMakeFiles/8080sim.dir/flags.make
 CMakeFiles/8080sim.dir/src/gui_modules/emulator_controls.cpp.o: ../src/gui_modules/emulator_controls.cpp
@@ -135,24 +135,54 @@ CMakeFiles/8080sim.dir/src/gui_modules/emulator_controls.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/8080sim.dir/src/gui_modules/emulator_controls.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/src/gui_modules/emulator_controls.cpp -o CMakeFiles/8080sim.dir/src/gui_modules/emulator_controls.cpp.s
 
+CMakeFiles/8080sim.dir/src/gui_modules/debug/debug.cpp.o: CMakeFiles/8080sim.dir/flags.make
+CMakeFiles/8080sim.dir/src/gui_modules/debug/debug.cpp.o: ../src/gui_modules/debug/debug.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/cmake-build-debug-wsl/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/8080sim.dir/src/gui_modules/debug/debug.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/8080sim.dir/src/gui_modules/debug/debug.cpp.o -c /mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/src/gui_modules/debug/debug.cpp
+
+CMakeFiles/8080sim.dir/src/gui_modules/debug/debug.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/8080sim.dir/src/gui_modules/debug/debug.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/src/gui_modules/debug/debug.cpp > CMakeFiles/8080sim.dir/src/gui_modules/debug/debug.cpp.i
+
+CMakeFiles/8080sim.dir/src/gui_modules/debug/debug.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/8080sim.dir/src/gui_modules/debug/debug.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/src/gui_modules/debug/debug.cpp -o CMakeFiles/8080sim.dir/src/gui_modules/debug/debug.cpp.s
+
+CMakeFiles/8080sim.dir/external/ImGuiFileDialog/ImGuiFileDialog.cpp.o: CMakeFiles/8080sim.dir/flags.make
+CMakeFiles/8080sim.dir/external/ImGuiFileDialog/ImGuiFileDialog.cpp.o: ../external/ImGuiFileDialog/ImGuiFileDialog.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/cmake-build-debug-wsl/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/8080sim.dir/external/ImGuiFileDialog/ImGuiFileDialog.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/8080sim.dir/external/ImGuiFileDialog/ImGuiFileDialog.cpp.o -c /mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/external/ImGuiFileDialog/ImGuiFileDialog.cpp
+
+CMakeFiles/8080sim.dir/external/ImGuiFileDialog/ImGuiFileDialog.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/8080sim.dir/external/ImGuiFileDialog/ImGuiFileDialog.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/external/ImGuiFileDialog/ImGuiFileDialog.cpp > CMakeFiles/8080sim.dir/external/ImGuiFileDialog/ImGuiFileDialog.cpp.i
+
+CMakeFiles/8080sim.dir/external/ImGuiFileDialog/ImGuiFileDialog.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/8080sim.dir/external/ImGuiFileDialog/ImGuiFileDialog.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/external/ImGuiFileDialog/ImGuiFileDialog.cpp -o CMakeFiles/8080sim.dir/external/ImGuiFileDialog/ImGuiFileDialog.cpp.s
+
 # Object files for target 8080sim
 8080sim_OBJECTS = \
-"CMakeFiles/8080sim.dir/src/emulator/instruction_implementations.cpp.o" \
 "CMakeFiles/8080sim.dir/src/main.cpp.o" \
+"CMakeFiles/8080sim.dir/src/emulator/emulator.cpp.o" \
+"CMakeFiles/8080sim.dir/src/emulator/instruction_implementations.cpp.o" \
 "CMakeFiles/8080sim.dir/src/gui_modules/cpu_controls.cpp.o" \
 "CMakeFiles/8080sim.dir/src/gui_modules/instruction_execution_trace.cpp.o" \
-"CMakeFiles/8080sim.dir/src/emulator/emulator.cpp.o" \
-"CMakeFiles/8080sim.dir/src/gui_modules/emulator_controls.cpp.o"
+"CMakeFiles/8080sim.dir/src/gui_modules/emulator_controls.cpp.o" \
+"CMakeFiles/8080sim.dir/src/gui_modules/debug/debug.cpp.o" \
+"CMakeFiles/8080sim.dir/external/ImGuiFileDialog/ImGuiFileDialog.cpp.o"
 
 # External object files for target 8080sim
 8080sim_EXTERNAL_OBJECTS =
 
-8080sim: CMakeFiles/8080sim.dir/src/emulator/instruction_implementations.cpp.o
 8080sim: CMakeFiles/8080sim.dir/src/main.cpp.o
+8080sim: CMakeFiles/8080sim.dir/src/emulator/emulator.cpp.o
+8080sim: CMakeFiles/8080sim.dir/src/emulator/instruction_implementations.cpp.o
 8080sim: CMakeFiles/8080sim.dir/src/gui_modules/cpu_controls.cpp.o
 8080sim: CMakeFiles/8080sim.dir/src/gui_modules/instruction_execution_trace.cpp.o
-8080sim: CMakeFiles/8080sim.dir/src/emulator/emulator.cpp.o
 8080sim: CMakeFiles/8080sim.dir/src/gui_modules/emulator_controls.cpp.o
+8080sim: CMakeFiles/8080sim.dir/src/gui_modules/debug/debug.cpp.o
+8080sim: CMakeFiles/8080sim.dir/external/ImGuiFileDialog/ImGuiFileDialog.cpp.o
 8080sim: CMakeFiles/8080sim.dir/build.make
 8080sim: /usr/lib/x86_64-linux-gnu/libfmt.a
 8080sim: /usr/local/lib/libImGui-SFML.a
@@ -162,7 +192,7 @@ CMakeFiles/8080sim.dir/src/gui_modules/emulator_controls.cpp.s: cmake_force
 8080sim: /usr/lib/x86_64-linux-gnu/libGL.so
 8080sim: /usr/lib/x86_64-linux-gnu/libGLU.so
 8080sim: CMakeFiles/8080sim.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/cmake-build-debug-wsl/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable 8080sim"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/Abdos/CLionProjects/Intel-8080-emulator/cmake-build-debug-wsl/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable 8080sim"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/8080sim.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
