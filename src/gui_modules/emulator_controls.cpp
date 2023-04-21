@@ -6,8 +6,17 @@
 
 #include "ImGuiFileDialog/ImGuiFileDialog.h"
 
-EmulatorControls::EmulatorControls(const std::string &title, ImVec2 window_pos, ImVec2 window_size) : title(title), window_pos(window_pos), window_size(window_size) {
+#include "fmt/core.h"
+#include <iostream>
 
+EmulatorControls::EmulatorControls(const std::string &title,
+                                   ImVec2 window_pos,
+                                   ImVec2 window_size,
+                                   Emulator* emulator) :
+                                   title(title),
+                                   window_pos(window_pos),
+                                   window_size(window_size),
+                                   emulator(emulator) {
 }
 
 void EmulatorControls::DrawWindow(ImGuiWindowFlags window_flags = 0) {
@@ -15,37 +24,36 @@ void EmulatorControls::DrawWindow(ImGuiWindowFlags window_flags = 0) {
     ImGui::SetNextWindowSize(window_size);
     ImGui::SetNextWindowSizeConstraints(ImVec2(0.0f, 0.0f), ImVec2(window_size.x, FLT_MAX));
 
-    if (ImGui::Begin(title.c_str(), NULL, window_flags))
+    if (!ImGui::Begin(title.c_str(), NULL, window_flags))
     {
-        DrawContents();
+        ImGui::End();
+        return;
     }
+    DrawContents();
     ImGui::End();
 }
 
 void EmulatorControls::DrawContents() {
 
-    static int active_tab = 0;
-
-    ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(0, 0));
-    if (ImGui::Button("Emulation", ImVec2(window_size.x/3, 25)))
+    ImGuiTabBarFlags tab_bar_flags = ImGuiTabBarFlags_None;
+    if (ImGui::BeginTabBar("settings_tab", tab_bar_flags))
     {
-        active_tab = 0;
-    }
-    ImGui::SameLine(0.0f, 0.0f);
-    if (ImGui::Button("Program", ImVec2(window_size.x/3, 25)))
-    {
-        active_tab = 1;
-    }
-    ImGui::SameLine(0.0f, 0.0f);
-    if (ImGui::Button("About", ImVec2(window_size.x/3, 25)))
-    {
-        active_tab = 2;
-    }
-    ImGui::PopStyleVar();
-    switch(active_tab) {
-        case 0: EmulationTab(); break;
-        case 1: ProgramTab(); break;
-        case 2: AboutTab(); break;
+        if (ImGui::BeginTabItem("Emulation"))
+        {
+            EmulationTab();
+            ImGui::EndTabItem();
+        }
+        if (ImGui::BeginTabItem("Program"))
+        {
+            ProgramTab();
+            ImGui::EndTabItem();
+        }
+        if (ImGui::BeginTabItem("About"))
+        {
+            AboutTab();
+            ImGui::EndTabItem();
+        }
+        ImGui::EndTabBar();
     }
 }
 
@@ -55,23 +63,33 @@ void EmulatorControls::EmulationTab() {
 }
 
 void EmulatorControls::ProgramTab() {
-    if (ImGui::Button("Load program", ImVec2(150, 25))) {
-        ImGuiFileDialog::Instance()->OpenDialog("Choose ROM file", "Choose File", ".cpp,.h,.hpp", ".");
-        std::cout
+    // open file dialog
+    if (ImGui::Button("Open File Dialog"))
+        ImGuiFileDialog::Instance()->OpenDialog("ChooseFileDlgKey", "Choose File", ".*",
+                                                ".", 1, nullptr, ImGuiFileDialogFlags_Modal);
+
+    // display
+    if (ImGuiFileDialog::Instance()->Display("ChooseFileDlgKey"))
+    {
+        // action if OK
+        if (ImGuiFileDialog::Instance()->IsOk())
+        {
+            std::string filePathName = ImGuiFileDialog::Instance()->GetFilePathName();
+            std::string filePath = ImGuiFileDialog::Instance()->GetCurrentPath();
+            // action
+
+            emulator->LoadRom(filePathName);
+
+        }
+
+        // close
+        ImGuiFileDialog::Instance()->Close();
+    }
+    // open file dialog
+    if (ImGui::Button("Clear mem")) {
+        emulator->ClearMemory();
     }
 
-        // display
-        if (ImGuiFileDialog::Instance()->Display("ChooseFileDlgKey")) {
-            // action if OK
-            if (ImGuiFileDialog::Instance()->IsOk()) {
-                std::string filePathName = ImGuiFileDialog::Instance()->GetFilePathName();
-                std::string filePath = ImGuiFileDialog::Instance()->GetCurrentPath();
-                // action
-            }
-
-            // close
-            ImGuiFileDialog::Instance()->Close();
-        }
 }
 
 void EmulatorControls::AboutTab() {

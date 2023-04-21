@@ -5,6 +5,7 @@
 #include "gui_modules/emulator_controls.hpp"
 #include "gui_modules/cpu_controls.hpp"
 #include "gui_modules/debug/debug.hpp"
+#include "gui_modules/debug/log.hpp"
 
 #include "fmt/core.h"
 #include "fmt/color.h"
@@ -19,7 +20,6 @@
 #include "../include/gui_modules/memory_editor.h"
 
 #include <iostream>
-#include <fstream>
 #include <memory>
 
 
@@ -45,10 +45,11 @@ int main(int argc, char* argv[]) {
     // Create GUI window modules
     static MemoryEditor ram_viewer("RAM Viewer", ImVec2(0, window_size[1]), ImVec2(0, 0)); // Auto sets width based on #cols
     static InstructionExecutionTrace instruction_execution_trace("ROM Viewer", ImVec2(323, 0), ImVec2(177, window_size[1]));
-    static CpuControls cpu_controls("CPU Controls", ImVec2(500, 500),ImVec2(400, 300));
-    static EmulatorControls emulator_controls("Settings", ImVec2(900, 500), ImVec2(300, 300));
+    static CpuControls cpu_controls("CPU Controls", ImVec2(500, 500),ImVec2(400, 300), &emulator);
+    static EmulatorControls emulator_controls("Settings", ImVec2(900, 500), ImVec2(300, 300), &emulator);
+    static Debug debug("Debug", ImVec2(500, 0), ImVec2(25, 25), &emulator);
 
-    static const ImGuiWindowFlags default_window_flags = ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoCollapse;
+    static const ImGuiWindowFlags default_window_flags = ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoBringToFrontOnFocus;
 
     // video buffer output reserved space: 650x450 (25px padding) center @ 850, 250
     // Draw placeholder video buffer output
@@ -61,6 +62,7 @@ int main(int argc, char* argv[]) {
     video_buffer_placeholder.setPosition(sf::Vector2f(850, 250));
 
     // Main update loop
+    sf::Clock emDeltaClock;
     sf::Clock deltaClock;
     while (window.isOpen()) {
         sf::Event event;
@@ -73,28 +75,36 @@ int main(int argc, char* argv[]) {
             }
         }
 
+        // Run emulator to match clock speed
+        if (emulator.running) {
+            unsigned int dt = emDeltaClock.restart().asMicroseconds();
+            // dt * clockspeed/10^6 = amount of cycle to run
+            unsigned int cycles_to_run = dt * (emulator.target_clock_speed / 1'000'000);
+            Log::Instance()->Gen(fmt::format("dt: {}, ctr: {}", dt, cycles_to_run));
+
+            unsigned int cycles_ran = 0;
+            while (cycles_ran < cycles_to_run) {
+                cycles_ran += emulator.StepInstruction();
+            }
+            // Make sure execution time doesn't snowball .restart() crucial here !
+            // FIXME: wrong actualclock speed due integer rounding
+            Log::Instance()->Gen(fmt::format("cr: {}, ctr: {} div: {}", cycles_ran, emDeltaClock.restart().asMicroseconds() + dt,(cycles_ran * 1'000'000) / (emDeltaClock.restart().asMicroseconds() + dt)));
+            emulator.actual_clock_speed = (cycles_ran * 1'000'000) / (emDeltaClock.restart().asMicroseconds() + dt);
+        }
+
+
         // Imgui update call
         ImGui::SFML::Update(window, deltaClock.restart());
 
-        // ImGui Tools/Apps (accessible from the "DEV" menu)
-        static bool show_app_metrics = true;
-        static bool show_app_debug_log = true;
-        static bool show_app_stack_tool = true;
-
-        if (show_app_metrics)
-            ImGui::ShowMetricsWindow(&show_app_metrics);
-        if (show_app_debug_log)
-            ImGui::ShowDebugLogWindow(&show_app_debug_log);
-        if (show_app_stack_tool)
-            ImGui::ShowStackToolWindow(&show_app_stack_tool);
 
         // Call GUI modules draw functions
         ImGui::PushStyleColor(ImGuiCol_TitleBgActive, ImGui::GetStyleColorVec4(ImGuiCol_TitleBg));
 
-        ram_viewer.DrawWindow(emulator.state.memory.data(), memory_size, default_window_flags);
+        ram_viewer.DrawWindow(emulator.state.memory.data(), emulator.state.memory.max_size(), default_window_flags);
         instruction_execution_trace.DrawWindow(default_window_flags);
         cpu_controls.DrawWindow(default_window_flags);
         emulator_controls.DrawWindow(default_window_flags);
+        debug.DrawWindow(); // No default flags as it handles it itself with no decorations
 
         ImGui::PopStyleColor();
 
@@ -103,26 +113,13 @@ int main(int argc, char* argv[]) {
         window.clear();
         // SFML draw calls
         window.draw(video_buffer_placeholder);
-
         // Imgui draw call
         ImGui::SFML::Render(window);
-
         window.display();
     }
 
     ImGui::SFML::Shutdown();
 
     return 0;
-}
-
-
-
-void EmulateInstruction(State8080* state) {
-    unsigned char* opcode = &state->memory[state->pc];
-
-    switch(*opcode) {
-        // Unimplemented
-    }
-    state->pc+=1;
 }
 

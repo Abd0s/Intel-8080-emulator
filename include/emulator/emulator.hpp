@@ -7,19 +7,20 @@
 
 #include <cstdint>
 #include <array>
-
-static const int memory_size = 65536;
+#include <string>
+#include <bitset>
 
 struct ConditionCodes {
-    uint8_t s:1;
-    uint8_t z:1;
-    uint8_t ac:1;
-    uint8_t p:1;
-    uint8_t c:1;
+    uint8_t s;
+    uint8_t z;
+    uint8_t ac;
+    uint8_t p;
+    uint8_t c;
 };
 
 struct State8080 {
     uint8_t a;
+    std::bitset<8> f;
     uint8_t b;
     uint8_t c;
     uint8_t d;
@@ -28,8 +29,7 @@ struct State8080 {
     uint8_t l;
     uint16_t sp;
     uint16_t pc;
-    std::array<uint8_t, memory_size> memory;
-    ConditionCodes condition_codes;
+    std::array<uint8_t, 65536> memory;
     uint8_t int_enable;
 };
 
@@ -38,11 +38,30 @@ class Emulator {
 public:
     State8080 state;
 
+    bool running;
+    unsigned int target_clock_speed;
+    unsigned int actual_clock_speed;
 
     Emulator();
 
-    void LoadRom();
+    void LoadRom(const std::string &file_path_name);
+
+    void SetClockSpeed(int clock_speed);
+
+    int GetActualClockSpeed();
+
+    void ClearMemory();
+
+    void ResetState();
+
+    int StepInstruction();
+
 private:
+    void SetFlags(uint16_t rs);
+    // CPU ISA IMPLEMENTATION
+    void MOV(uint8_t &rd, uint8_t rs);
+    void MVI(uint8_t &rd, uint8_t rs);
+    void ADD(uint8_t rs);
 
 };
 

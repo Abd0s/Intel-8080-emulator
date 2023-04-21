@@ -3,6 +3,9 @@ project(8080sim)
 
 set(CMAKE_CXX_STANDARD 17)
 
+# GoogleTest
+#set(CMAKE_ENABLE_EXPORTS ON)
+
 # Create a sources variable with a link to all cpp files to compile
 set(SOURCES
         src/main.cpp
@@ -15,7 +18,7 @@ set(SOURCES
 
     # External
         external/ImGuiFileDialog/ImGuiFileDialog.cpp
-        )
+        src/gui_modules/debug/log.cpp include/gui_modules/debug/log.hpp)
 
 
 add_executable(${PROJECT_NAME} ${SOURCES})
@@ -39,5 +42,6 @@ find_package(SFML
         system window graphics audio REQUIRED)
 target_link_libraries(8080sim sfml-system sfml-graphics sfml-window)
 
-
+# Tests
+add_subdirectory(Google_tests)
 

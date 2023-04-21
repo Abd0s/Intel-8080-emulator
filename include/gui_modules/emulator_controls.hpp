@@ -6,15 +6,20 @@
 #define INC_8080SIM_EMULATOR_CONTROLS_HPP
 
 #include <string>
+#include <memory>
+
 #include "imgui.h"
+
+#include "emulator/emulator.hpp"
 
 struct EmulatorControls {
 
     ImVec2 window_pos;
     ImVec2 window_size;
     std::string title;
+    Emulator* emulator;
 
-    EmulatorControls(const std::string &title, ImVec2 window_pos, ImVec2 window_size);
+    EmulatorControls(const std::string &title, ImVec2 window_pos, ImVec2 window_size, Emulator* emulator);
 
     void DrawWindow(ImGuiWindowFlags window_flags);
 
