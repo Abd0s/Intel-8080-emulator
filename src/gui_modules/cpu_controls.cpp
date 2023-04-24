@@ -93,7 +93,7 @@ void CpuControls::DrawContents() {
 
         switch (radix_select) {
             case 0: {
-                reg_input_flags = reg_input_flags | ImGuiInputTextFlags_CharsHexadecimal; reg_format = "0x%02X"; break;
+                reg_input_flags = reg_input_flags | ImGuiInputTextFlags_CharsHexadecimal; reg_format = "%02X"; break;
             }
             case 1: {
                 reg_input_flags = reg_input_flags | ImGuiInputTextFlags_CharsDecimal; reg_format = "%u"; break;

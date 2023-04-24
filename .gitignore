@@ -32,7 +32,7 @@
 *.app
 
 # IDE's
-/.idea/
+/.idea
 
 # Build tools
 /cmake-build-debug-wsl/

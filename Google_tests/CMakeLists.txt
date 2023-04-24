@@ -5,20 +5,31 @@ project(Google_tests)
 add_subdirectory(googletest-main)
 include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
 
-# 'Google_Tests_run' is the target name
-# 'test1.cpp tests2.cpp' are source files with tests
+# Create a sources variable with a link to all cpp files to compile
+get_filename_component(PARENT_DIR ../ ABSOLUTE)
+set(SOURCES
+        ${PARENT_DIR}/src/emulator/emulator.cpp
+        ${PARENT_DIR}/src/gui_modules/debug/log.cpp)
+
 add_executable(Google_Tests_run
         EmulatorInstructionTest.cpp
-        )
+        ${SOURCES})
 
-# Create a sources variable with a link to all cpp files to compile
-get_filename_component(VAR_PARENT ${MYPROJECT_DIR}/.. ABSOLUTE)
-set(SOURCES ${VAR_PARENT}src/emulator/emulator.cpp)
-
-target_include_directories(${PROJECT_NAME}
+target_include_directories(Google_Tests_run
         PRIVATE
-        ${PROJECT_SOURCE_DIR}/include
-        ${PROJECT_SOURCE_DIR}/external
+        ${PARENT_DIR}/include
         )
+
+# External libraries
+find_package(fmt)
+target_link_libraries(Google_Tests_run fmt::fmt)
+
+find_package(ImGui-SFML REQUIRED)
+target_link_libraries(Google_Tests_run ImGui-SFML::ImGui-SFML)
+
+find_package(SFML
+        COMPONENTS
+        system window graphics audio REQUIRED)
+target_link_libraries(Google_Tests_run sfml-system sfml-graphics sfml-window)
 
 target_link_libraries(Google_Tests_run gtest gtest_main)

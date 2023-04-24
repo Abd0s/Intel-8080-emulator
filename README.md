@@ -4,17 +4,17 @@ written in C++. It comes with a graphical user interface (GUI) that includes a m
 
 ![image](https://user-images.githubusercontent.com/43931540/234068697-4b0e3658-34a4-4a10-abd4-7219ad3e463b.png)
 
-# Features
+## Features
 
 + Easy to use GUI with memory and state editor
 
-# Know shortcomings:
+## Know shortcomings:
 
 + Support for interrupts
 + Windows support
 + Fixed window size, no scaling
 
-# Roadmap
+## Roadmap
 - [ ] Complete full ISA implementation with unit test coverage.
 - [ ] Pass all common 8080 test suites, such as TST8080.COM, 8080PRE.COM, CPUTEST.COM, 8080EXM.COM (a modified version of 8080EXER.COM).
 - [ ] Add configurability to support a wide variety of I/O devices.
@@ -49,7 +49,7 @@ then you will need:
 Use your platform specific package manager such as `apt` or compile and install from the respective
 project sources.
 
-## Building the project
+### Building the project
 
 To build the project, all you need to do, ***after correctly
 [installing the project dependencies](README.md#Prerequisites)***, is run the following **CMake** routine:
@@ -61,7 +61,7 @@ cmake --build . --target 8080sim
 ```
 > ***Note:*** use `--target 8080sim-diss` instead if you want build the disassembler instead.
 
-## Disassembler
+### Disassembler
 
 The project comes paired with a standalone disassembler.
 To run disassembler pass the target binaries as program argument:
@@ -73,18 +73,14 @@ The disassembler outputs its results to stdout. To save it as a text file redire
 e.g. on linux `./disassembler >> assembly.txt `
 
 
-## Running the tests
+### Running the tests
 
 This project uses [Google Test](https://github.com/google/googletest/)
-for unit testing. To run the tests, simply use CTest, from the build directory, passing the desire
-configuration for which to run tests for. An example of this procedure is:
+for unit testing. To run the tests, simply build the test and run it. An example of this procedure is:
 
 ```bash
 cd build          # if not in the build directory already
-ctest -C Release  # or `ctest -C Debug` or any other configuration you wish to test
-
-# you can also run tests with the `-VV` flag for a more verbose output (i.e.
-#GoogleTest output as well)
+cmake --build . --target Google_Tests_run
 ```
 
 > ***Note:*** Only the ISA implementation is unit tested.
