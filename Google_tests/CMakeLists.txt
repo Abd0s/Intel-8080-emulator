@@ -12,7 +12,8 @@ add_executable(Google_Tests_run
         )
 
 # Create a sources variable with a link to all cpp files to compile
-set(SOURCES src/emulator/emulator.cpp)
+get_filename_component(VAR_PARENT ${MYPROJECT_DIR}/.. ABSOLUTE)
+set(SOURCES ${VAR_PARENT}src/emulator/emulator.cpp)
 
 target_include_directories(${PROJECT_NAME}
         PRIVATE

@@ -1,40 +1,112 @@
 # Intel-8080-emulator
-Emulator + disassembler for the Intel 8080 ISA written in C++
+An emulator and disassembler for the Intel 8080 instruction set architecture (ISA), 
+written in C++. It comes with a graphical user interface (GUI) that includes a memory and state editor.
+
 
 # Features
-## Passing tests
-The following tests pass succesfully:
 
-+ fde
++ Easy to use GUI with memory and state editor
 
+# Know shortcomings:
 
++ Support for interrupts
++ Windows support
++ Fixed window size, no scaling
 
-# Know flaws
+# Roadmap
+- [ ] Complete full ISA implementation with unit test coverage.
+- [ ] Pass all common 8080 test suites, such as TST8080.COM, 8080PRE.COM, CPUTEST.COM, 8080EXM.COM (a modified version of 8080EXER.COM).
+- [ ] Add configurability to support a wide variety of I/O devices.
+- [ ] Integrate decompiler within the emulator with support of breakpoints and other advanced debugging features.
 
 # Run
 
-Compile the project or download one of the precompiled releases (only linux). Windows
-users can run the linux binaries through WSL.
+Compile the project using the steps below or download one of the precompiled releases (only linux). Windows
+users can run the linux binaries through WSL as Windows is not supported (for now).
 
-Load a binary file to run into the emulator and click the run button in the emulator control
-section.
 
-# Compile
+## Getting Started
 
-Build using CMake and `CMakeList.txt` to your desired target.
+These instructions will get you a copy of the emulator up and running on your local
+machine for development and testing purposes.
 
-The following dependencies need to be installed:
+### Prerequisites
 
-+ SFML
-+ SFML-Imgui
-+ Imgui
-+ fmt
+This project is meant to only be compiled for Linux for now (cross-platform support might come in 
+the future). If you wish to use the project *as-is*, meaning using the versions recommended here, 
+then you will need:
 
-Use your platform specific package manager such as `apt` or compile/install from the respective 
+* **CMake v3.20+** - found at [https://cmake.org/](https://cmake.org/)
+
+* **C++ Compiler** - needs to support at least the **C++17** standard, i.e.
+  *GCC*, *Clang*
+* **SFML**
+* **SFML-Imgui**
+* **Imgui**
+* **fmt**
+
+Use your platform specific package manager such as `apt` or compile and install from the respective
 project sources.
 
-# Contribute
+## Building the project
 
-# License
+To build the project, all you need to do, ***after correctly
+[installing the project dependencies](README.md#Prerequisites)***, is run the following **CMake** routine:
+
+```bash
+mkdir build/ && cd build/
+cmake .. 
+cmake --build . --target 8080sim
+```
+> ***Note:*** use `--target 8080sim-diss` instead if you want build the disassembler instead.
+
+## Disassembler
+
+The project comes paired with a standalone disassembler.
+To run disassembler pass the target binaries as program argument:
+
+`./<compiled_disassembler> <binary_file_to_disassemble>`
+
+The disassembler outputs its results to stdout. To save it as a text file redirect the output.
+
+e.g. on linux `./disassembler >> assembly.txt `
+
+
+## Running the tests
+
+This project uses [Google Test](https://github.com/google/googletest/)
+for unit testing. To run the tests, simply use CTest, from the build directory, passing the desire
+configuration for which to run tests for. An example of this procedure is:
+
+```bash
+cd build          # if not in the build directory already
+ctest -C Release  # or `ctest -C Debug` or any other configuration you wish to test
+
+# you can also run tests with the `-VV` flag for a more verbose output (i.e.
+#GoogleTest output as well)
+```
+
+> ***Note:*** Only the ISA implementation is unit tested.
+
+
+## Contributing
+
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our how you can
+become a contributor and the process for submitting pull requests to us.
+
+## Versioning
+
+This project makes use of [SemVer](http://semver.org/) for versioning. A list of
+existing versions can be found in the
+[project's releases](https://github.com/Abd0s/Intel-8080-emulator/releases).
+
+## Authors
+
+* **Abdulahad Kancan** - [@Abd0s](https://github.com/Abd0s)
+
+## License
+
+This project is licensed under the [MIT](https://opensource.org/license/mit/) - see the
+[LICENSE](LICENSE) file for details
 
 

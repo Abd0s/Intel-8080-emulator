@@ -58,8 +58,7 @@ void EmulatorControls::DrawContents() {
 }
 
 void EmulatorControls::EmulationTab() {
-    ImGui::SeparatorText("Loadds");
-    ImGui::Text("LALALALALALALAL");
+    ImGui::SeparatorText("Video buffer");
 }
 
 void EmulatorControls::ProgramTab() {
@@ -86,12 +85,13 @@ void EmulatorControls::ProgramTab() {
         ImGuiFileDialog::Instance()->Close();
     }
     // open file dialog
-    if (ImGui::Button("Clear mem")) {
+    if (ImGui::Button("Clear memory")) {
         emulator->ClearMemory();
     }
 
 }
 
 void EmulatorControls::AboutTab() {
-
+    ImGui::Text("Intel 8080 emulator by Abods");
+    ImGui::TextWrapped("Opensource at https://github.com/Abd0s/Intel-8080-emulator under MIT license");
 }
