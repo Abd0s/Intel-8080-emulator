@@ -2,6 +2,7 @@
 An emulator and disassembler for the Intel 8080 instruction set architecture (ISA), 
 written in C++. It comes with a graphical user interface (GUI) that includes a memory and state editor.
 
+![image](https://user-images.githubusercontent.com/43931540/234068697-4b0e3658-34a4-4a10-abd4-7219ad3e463b.png)
 
 # Features
 
